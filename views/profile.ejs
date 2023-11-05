@@ -1,0 +1,117 @@
+<%- include('./header.ejs') %>
+ <main>
+  <!-- Marketing messaging and featurettes ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+  <div class="container marketing">
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <% if(msg.length> 0){ %>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong><%= msg %></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
+      <% if(msg2.length> 0){ %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong><%= msg2 %></strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Name :- <span class="text-muted"><%= n %></span>
+          <br>
+          Email :- <span class="text-muted"><%= email %></span>
+        </h2>
+        <br>
+        <br>
+        <br>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Profile</button>
+        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changePassword">Change Password</a>
+      </div>
+      <div class="col-md-5 order-md-1" style="padding: 50px;">
+        <img src="<%= img.url %>" width="100%">
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <!-- Modal -->
+  <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="editProfileLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+          <h1 class="fw-bold mb-0 fs-2">Edit Profile</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body p-5 pt-0">
+          <form class="" action="/profile/update" method="post" enctype="multipart/form-data">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control rounded-3" id="floatingEmail" placeholder=""
+                name="n" value="<%= n %>">
+              <label for="floatingEmail">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control rounded-3" id="floatingEmail" placeholder=""
+                name="email" value="<%= email %>" readonly>
+              <label for="floatingEmail">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+           
+              <input type="file" class="form-control rounded-3"  placeholder=""
+                name="image" value="">
+                <img src="<%= img.url %>" height="50px" width="20px">
+                <label for="Image">Image</label>
+           
+            </div>
+           
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Modal -->
+
+  <!-- Change Password Modal -->
+  <div class="modal fade" id="changePassword" tabindex="-1" aria-labelledby="changePasswordLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header p-5 pb-4 border-bottom-0">
+          <!-- <h1 class="modal-title fs-5" >Modal title</h1> -->
+          <h1 class="fw-bold mb-0 fs-2">Change Password</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body p-5 pt-0">
+          <form class="" action="/changepassword" method="post">
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="oldPassword" placeholder="" name="oldpassword">
+              <label for="oldPassword">Old Password</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="newPassword" placeholder="" name="newpassword">
+              <label for="newPassword">New Password</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control rounded-3" id="confirmNewPassword" placeholder="" name="cpassword">
+              <label for="confirmNewPassword">Confirm New Password</label>
+            </div>
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Change Password Modal -->
+
+  <!-- /.container -->
+  <!-- FOOTER -->
+  
+    <%- include('./footer.ejs') %>    
+</main>
+

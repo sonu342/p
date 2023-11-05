@@ -1,0 +1,207 @@
+<%- include('./header.ejs') %>
+    <!--slider div end-->
+    <!-- ================================================================ -->
+
+    <div class="container mb-5 text-center">
+        <h1 class="course_heading mt-5"><%= n %>
+        </h1>
+        <h2 class="course_heading my-3">Register Your Course</h2>
+        <p class="course_para text-center mb-5">Course Registration means the official recording of a student's name to
+            study a course or courses.</p>
+        <div class="row">
+
+            <div class="col-md-4 mb-5">
+                <div class="card card1">
+                    <img class="card-img-top" height="200px" width="300px" src="/images/card_image1.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title ">B.Tech</h5>
+                        <p class="card-text">B.Tech is a professional undergraduate engineering degree</p>
+                        
+                 
+                            
+                            <% if(b){ %>
+                              <a class="btn btn-primary" href="/courseDisplay">Display</a>
+                              <% } else { %>
+                                <a href="/" class="btn btn-primary A" data-bs-toggle="modal" data-bs-target="#btech">Register</a>
+                              <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card2">
+                    <img class="card-img-top " height="200px!important" width="300px!important"
+                        src="images/card_image2.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title ">BCA</h5>
+                        <p class="card-text">BCA is a three-year Bachelor's Degree in Computer Application </p>
+                        
+                   
+                        <% if(bca){ %>
+                          <a class="btn btn-primary" href="/courseDisplay">Display</a>
+                          <% } else { %>
+                            <a href="/" class="btn btn-primary A" data-bs-toggle="modal" data-bs-target="#bca">Register</a>
+                          <% } %>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card card3">
+                    <img class="card-img-top " height="200px" width="300px" src="images/card_image3.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title ">MCA</h5>
+                        <p class="card-text">MCA is a professional post-graduation degree in computer science</p>
+                        
+                 
+                            
+                            <% if(mca){ %>
+                              <a class="btn btn-primary" href="/courseDisplay">Display</a>
+                              <% } else { %>
+                                <a href="/" class="btn btn-primary A" data-bs-toggle="modal" data-bs-target="#mca">Register</a>
+                              <% } %>
+
+                                
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+      <!-- Footer Section start -->
+  <div class="container-fluid p-0 footer pt-4">
+<!--btch-->
+    <div class="modal fade" id="btech" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">B Tech</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form action="/course-insert" method="post">
+                <div class="mb-3"> 
+                  <label>Name:</label>
+                  <input type="text" name="name"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Email:</label>
+                  <input type="email" name="email"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Phone:</label>
+                  <input type="number" name="phone" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>City:</label>
+                  <input type="text" name="city" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Address:</label>
+                  <input type="text" name="address" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Course:</label>
+                  <input type="text" name="course" value="btech" class="form-control" >
+                </div>
+                <button class="btn btn-info" type="submit">Submit</button>
+                </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+<!--bca-->
+      <div class="modal fade" id="bca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">BCA</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form action="/course-insert" method="post">
+                <div class="mb-3"> 
+                  <label>Name:</label>
+                  <input type="text" name="name"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Email:</label>
+                  <input type="email" name="email"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Phone:</label>
+                  <input type="number" name="phone" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>City:</label>
+                  <input type="text" name="city" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Address:</label>
+                  <input type="text" name="address" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Course:</label>
+                  <input type="text" name="course" value="bca" class="form-control" >
+                </div>
+                <button class="btn btn-info" type="submit">Submit</button>
+                </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+   <!--mca-->
+      
+      <div class="modal fade" id="mca" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">BCA</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <form action="/course-insert" method="post">
+                <div class="mb-3"> 
+                  <label>Name:</label>
+                  <input type="text" name="name"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Email:</label>
+                  <input type="email" name="email"  class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Phone:</label>
+                  <input type="number" name="phone" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>City:</label>
+                  <input type="text" name="city" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Address:</label>
+                  <input type="text" name="address" class="form-control" >
+                </div>
+                <div class="mb-3">
+                  <label>Course:</label>
+                  <input type="text" name="course" value="mca" class="form-control" >
+                </div>
+                <button class="btn btn-info" type="submit">Submit</button>
+                </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+
+ <%- include('./footer.ejs') %>                         
+    

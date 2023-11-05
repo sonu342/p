@@ -1,0 +1,29 @@
+<%- include('./header.ejs') %>
+    <br />
+    <br />
+         
+
+    
+    <div class="container">
+<h3 class="text-center">Course View</h3>         
+        <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+               
+            </tr>
+         <tr>
+                    <td><%= d._id %></td>
+                    <td><%= d.name %></td>
+                    <td><%= d.email %></td>
+                    <td><%= d.city %></td>
+                    
+                </tr>
+      </table>
+    </div>
+  <!-- Footer Section start -->
+  <div class="container-fluid p-0 footer pt-4">
+                           
+<%- include('./footer.ejs') %>
