@@ -15,22 +15,17 @@ app.set('view engine', 'EJS')
 app.use(fileUpload({useTempFiles: true}));
 // connected to monodb
 connectDb()
-// app.use(session({
-//   secret: 'secret',
-//   cookie: {maxAge:60000},
-//   resave: false,
-//   saveUninitialized: false,
-
-// }));
-
 app.use(session({
-  cookie: { maxAge: 86400000 },
-  store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24h
-  }),
+  secret: 'secret',
+  cookie: {maxAge:60000},
+store: new MemoryStore({
+  checkPeriod: 86400000 // prune expired entries every 24h
+}),
   resave: false,
-  secret: 'keyboard cat'
-}))
+  saveUninitialized: false,
+
+}));
+
 //cookies 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser())
