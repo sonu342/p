@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +19,7 @@
     "express-fileupload": "^1.4.1",
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.2",
+    "memorystore": "^1.6.7",
     "mongoose": "^7.4.3",
     "nodemailer": "^6.9.7"
   }
